@@ -12,7 +12,7 @@ My personal site. Includes demos and examples of the various projects and plugin
 
 To get "jekyll --server --auto" to work properly, roll back the version of directory_watcher
 
-	sudo gem uninstall directory_watcher && sudo gem install directory_watcher -v 1.4.1
+`sudo gem uninstall directory_watcher && sudo gem install directory_watcher -v 1.4.1`
 
 ### Run the server
 
@@ -28,15 +28,26 @@ https://computingforgeeks.com/how-to-install-jekyll-on-ubuntu-18-04/
 
 Install jeykll
 
-	sudo apt-get update
-	sudo apt-get install jekyll
+```bash
+sudo apt-get update
+sudo apt-get install jekyll
+```
 
 Clone the git repo and run Jekyll Build
 
-	git clone https://github.com/benwigley/benwigley.com
-	jekyll build
+```bash
+git clone https://github.com/benwigley/benwigley.com
+jekyll build
+```
 
 The static site files will be located in the `_site` folder.
 Now copy the `benwigley.com.conf` file to apache2's `sites-enabled` folder, and run:
 
-	a2ensite benwigley.com.conf
+`a2ensite benwigley.com.conf`
+
+
+## SSL
+
+Run the following on the server to renew the certificate:
+
+`sudo certbot --apache -n -d benwigley.com`
